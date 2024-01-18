@@ -24,4 +24,9 @@ public interface PostMapper {
 			@Param("content") String content,
 			@Param("imagePath") String imagePath);
 	
+	// input : postId, userId / output : Post
+	public Post selectPostByPostIdUserId(
+			@Param("postId") int postId, 
+			@Param("userId") int userId);
+	
 } // public interface PostMapper
