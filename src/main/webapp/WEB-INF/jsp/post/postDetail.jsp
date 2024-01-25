@@ -104,6 +104,26 @@
 			// alert("글 삭제");
 			
 			let postId = $(this).data("post-id");
+			// alert(postId);
+			
+			$.ajax({
+				// request
+				type:"DELETE"
+				, url:"/post/delete"
+				, data:{"postId":postId}
+			
+				// response
+				, success:function(data) {
+					if (data.code == 200) {
+						location.href = "/post/post-list-view";
+					} else {
+						alert(data.error_message);
+					}
+				}
+				, error:function(request, status, error) {
+					alert("글 삭제하는데 실패했습니다.");
+				}
+			});
 		});
 	});
 </script>

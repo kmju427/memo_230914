@@ -80,4 +80,13 @@
 		WHERE
 			`id` = #{postId}
 	</update>
+	
+	<!-- 글 삭제 -->
+	<delete id="deletePostByPostId" parameterType="int">
+		DELETE
+		FROM
+			`post`
+		WHERE
+			`id` = #{postId}
+	</delete>
 </mapper>
